@@ -38,8 +38,8 @@ dependencies {
 	implementation 'com.fasterxml.jackson.module:jackson-module-kotlin'
 	implementation 'org.jetbrains.kotlin:kotlin-reflect'
 
-    // PostgreSQL
-    runtimeOnly 'org.postgresql:postgresql'
+    // MySQL
+    runtimeOnly 'com.mysql:mysql-connector-j'
 
 	//Dependecias de test por defecto de Spring Boot
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
