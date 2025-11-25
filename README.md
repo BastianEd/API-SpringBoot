@@ -35,8 +35,30 @@ Sigue estos pasos para ejecutar el proyecto localmente.
 3.  Crea una nueva base de datos. Para este proyecto, el nombre por defecto es **`zonalibros_db`**.
 
     ```sql
-    CREATE DATABASE zonalibros_db;
+     -- Volcando estructura de base de datos para zonalibros_db
+     CREATE DATABASE IF NOT EXISTS `zonalibros_db`;
+     USE `zonalibros_db`;
+
+     -- Volcando datos para la tabla zonalibros_db.books: ~2 rows (aproximadamente)
+     INSERT INTO `books` (`id`, `author`, `cover_image_url`, `is_new`, `price`, `price_value`, `title`) VALUES
+     (1, 'ROWLING, J.K.', 'https://i.pinimg.com/1200x/ee/23/df/ee23df3a67f6f27ab8645debc9f6d5e3.jpg', b'1', '$22.900', 22900, 'Harry Potter y la piedra filosofal'),
+     (2, 'ROWLING, J.K.', 'https://i.pinimg.com/736x/fe/a1/c8/fea1c802f18a47c29e47a8fcc13e1e7f.jpg', b'1', '$23.500', 22900, 'Harry Potter y la cámara secreta'),
+     (3, 'ROWLING, J.K.', 'https://i.pinimg.com/1200x/57/8c/f5/578cf5e990eaeb85ccdadf786006c6a7.jpg', b'1', '$24.900', 24900, 'Harry Potter y el prisionero de Azkaban'),
+     (4, 'ROWLING, J.K.', 'https://i.pinimg.com/1200x/66/ca/68/66ca681acf564417ac238874ccff97d5.jpg', b'1', '$27.900', 27900, 'Harry Potter y el cáliz de fuego'),
+     (5, 'ROWLING, J.K.', 'https://i.pinimg.com/736x/3f/b1/2c/3fb12c0230d31a576c7687ffe894de75.jpg', b'1', '$29.900', 29900, 'Harry Potter y la Orden del Fénix'),
+     (6, 'ROWLING, J.K.', 'https://i.pinimg.com/736x/d5/b0/a9/d5b0a9bc8dd1b2b2ff462c820ac0f1a8.jpg', b'1', '$30.500', 30500, 'Harry Potter y el misterio del príncipe'),
+     (7, 'ROWLING, J.K.', 'https://i.pinimg.com/736x/0c/82/5d/0c825d08fb10e3ee03472de41bae6183.jpg', b'1', '$32.000', 32000, 'Harry Potter y las Reliquias de la Muerte'),
+     (8, 'ROWLING, J.K.', 'https://i.pinimg.com/736x/99/46/d8/9946d822a2e92707bdf3ca47d15ebed1.jpg', b'1', '$25.000', 25000, 'Harry Potter y el legado maldito');
+
+
+     -- Volcando datos para la tabla zonalibros_db.users: ~0 rows (aproximadamente)
+     INSERT INTO `users` (`id`, `address`, `email`, `favorite_genres`, `full_name`, `password`, `phone`, `profile_picture_uri`) VALUES
+     (1, 'Direccion de Nicolas', 'nico.fo@nic.cl', 'string', 'Nicolas Fonseca', '$2a$10$Jk3sKSJHEmDwjZulsJnoSOGwVp91OQm9.mk587pANE0TaKkaz.uT6', '+56945673490', 'string'),
+     (2, 'Dirección falsa 3', 'mangel@duoc.cl', 'FICCION,TERROR,SUSPENSO', 'intento tres', '$2a$10$M6s8jk3r8FXBD170dC12BOh56ppPzzndJSoC56jyhNacbGmHsXqGu', '+56956782345', 'content://com.example.niba_vision.provider/my_images/JPEG_20251112_184523_9131687754642596395.jpg');
+
+
     ```
+    
 
 ### 3. Configurar la API
 
